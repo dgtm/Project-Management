@@ -1,4 +1,4 @@
-<h1>Projects#show</h1>
+<h1>Project</h1>
 <h3>
 <%= @project.title %> <br />
 <%= @project.description %> <br />
@@ -6,3 +6,6 @@
 <%= @project.deadline %> <br />
 </h3>
 
+
+<h2>Available Task Groups</h2>
+<%= render "/task_groups/task_groups" %>

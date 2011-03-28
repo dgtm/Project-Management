@@ -1,4 +1,18 @@
 PMS::Application.routes.draw do
+  # get "tasks/index"
+  #
+  # get "tasks/create"
+  #
+  # get "tasks/new"
+  #
+  # get "tasks/edit"
+  #
+  # get "tasks/show"
+  #
+  # get "tasks/destroy"
+  #
+  # get "tasks/update"
+
   # get "projects/index"
   #
   #   get "projects/create"
@@ -14,9 +28,11 @@ PMS::Application.routes.draw do
   #   get "projects/edit"
 
   resources :projects do
-    resources :task_groups do
-        resources :tasks
-    end
+    resources :task_groups
+  end
+
+  resources :task_groups do
+    resources :tasks
   end
 
 

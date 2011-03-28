@@ -38,9 +38,10 @@ class TaskGroupsController < ApplicationController
   #     end
   #   end
   #
-  #   def show
-  #     @project = Project.find(params[:id])
-  #   end
+  def show
+    @project = Project.find(params[:project_id])
+    @task_group = @project.TaskGroups.find(params[:id])
+  end
   #
   #   def edit
   #     @project = Project.find(params[:id])
