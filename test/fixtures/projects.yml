@@ -1,0 +1,30 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  title: MyString
+  descrption: MyText
+  deadline: 2011-03-28 13:51:35
+  status: MyString
+  budget: 1
+
+two:
+  title: MyString
+  descrption: MyText
+  deadline: 2011-03-28 13:51:35
+  status: MyString
+  budget: 1
+
+# == Schema Information
+#
+# Table name: projects
+#
+#  id          :integer         not null, primary key
+#  title       :string(255)
+#  description :text
+#  deadline    :datetime
+#  status      :string(255)
+#  budget      :integer
+#  created_at  :datetime
+#  updated_at  :datetime
+#
+

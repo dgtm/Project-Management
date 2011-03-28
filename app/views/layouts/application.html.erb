@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>PMS</title>
+  <%= stylesheet_link_tag :all %>
+  <%= javascript_include_tag :defaults %>
+  <%= csrf_meta_tag %>
+</head>
+<body>
+<h1>
+<%= link_to "Project Management System", projects_path %> </h1>
+<hr />
+<%= notice %>
+<%= alert %>
+<%= yield %>
+
+</body>
+</html>

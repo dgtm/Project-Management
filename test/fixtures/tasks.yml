@@ -1,0 +1,27 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  duration: 1
+  task_group_id: 1
+  status: MyString
+
+two:
+  name: MyString
+  duration: 1
+  task_group_id: 1
+  status: MyString
+
+# == Schema Information
+#
+# Table name: tasks
+#
+#  id            :integer         not null, primary key
+#  name          :string(255)
+#  duration      :integer
+#  task_group_id :integer
+#  status        :string(255)
+#  created_at    :datetime
+#  updated_at    :datetime
+#
+

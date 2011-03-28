@@ -1,0 +1,11 @@
+<% semantic_form_for @project do |form| %>
+  <% form.inputs do %>
+  <%= form.input :title %>
+  <%= form.input :description, :as => :text %>
+  <%= form.input :status %>
+  <%= form.input :budget %>
+  <%= form.input :deadline, :as => :date %>
+  <%= form.buttons %>
+  <%= form.semantic_errors :alert %>
+  <% end %>
+<% end %>

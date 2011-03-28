@@ -1,0 +1,6 @@
+<% semantic_form_for ([@project, @project.TaskGroups.build]) do |form| %>
+  <% form.inputs do %>
+    <%= form.input :name %>
+    <%= form.buttons %>
+  <% end %>
+<% end %>
