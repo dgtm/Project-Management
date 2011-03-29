@@ -10,6 +10,7 @@ class TaskGroupsController < ApplicationController
   def show
       @task_group=TaskGroup.find(params[:id])
       @project = @task_group.project
+      @tasks= @task_group.tasks.all
   end
 
   def create

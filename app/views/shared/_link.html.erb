@@ -1,0 +1,7 @@
+
+<% if person_signed_in? %>
+  <%= "Welcome #{current_person.name}!" %>
+  <%= link_to "SignOut", destroy_person_session_path %>
+<% else %>
+  <%= link_to "SignIn", new_person_session_path %>
+<% end %>

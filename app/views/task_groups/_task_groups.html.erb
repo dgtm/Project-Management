@@ -3,7 +3,7 @@
 <ul>
   <% @task_groups.each do |taskgroup| %>
     <li>
-    <%= taskgroup.name %>
+    <%= link_to "#{taskgroup.name}", task_group_path(taskgroup) %>
     <%= taskgroup.duration %>
     </li>
   <% end %>

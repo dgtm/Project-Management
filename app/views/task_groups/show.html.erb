@@ -1,8 +1,18 @@
 <h1>TaskGroup</h1>
-<%= @project %> <br />
+<%= @project.title %> <br />
 
 <h3>
-<%= @task_group %> <br />
+<%= @task_group.name %> <br />
+
+<h4>Task List </h4>
+<ul>
+<% @tasks.each do |task| %>
+  <li><%= task.name %>
+  <%= task.duration %>
+  <%= task.status %>
+  <%= task.created_at %> </li>
+<% end %>
+</ul>
 <%= link_to "Create Tasks", new_task_group_task_path(@task_group)%>
 
 </h3>

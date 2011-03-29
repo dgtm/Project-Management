@@ -6,7 +6,11 @@ class TasksController < ApplicationController
 
   def create
     @task_group = TaskGroup.find(params[:task_group_id])
-    @task = @task_group.tasks.create(params[:task])
+    if @task = @task_group.tasks.create(params[:task])
+      redirect_to task_group_path(@task_group)
+    else
+      render :action => "new", :alert => 'Task couldnot be added. Try again'
+    end
   end
 
   def new

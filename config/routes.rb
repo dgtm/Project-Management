@@ -1,4 +1,6 @@
 PMS::Application.routes.draw do
+  devise_for :people
+
   # get "tasks/index"
   #
   # get "tasks/create"
@@ -34,6 +36,11 @@ PMS::Application.routes.draw do
   resources :task_groups do
     resources :tasks
   end
+
+  resources:people
+
+  root :to => "projects#index"
+
 
 
 
