@@ -22,6 +22,10 @@ class TasksController < ApplicationController
   end
 
   def show
+    @people = Person.all
+    @task = Task.find(params[:id])
+    @task_group = TaskGroup.find(params[:task_group_id])
+
   end
 
   def destroy

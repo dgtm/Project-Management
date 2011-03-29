@@ -1,5 +1,7 @@
 class Task < ActiveRecord::Base
   belongs_to :task_group
+  has_many :people, :through => :connection
+  validates :name, :presence => true
 
   def set_name
     self.name

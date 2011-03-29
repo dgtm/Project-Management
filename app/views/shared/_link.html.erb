@@ -1,6 +1,9 @@
 
 <% if person_signed_in? %>
-  <%= "Welcome #{current_person.name}!" %>
+  <%= "Welcome #{current_person.name}!" %> |
+
+  <%= "You last signed in at #{time_ago_in_words(current_person.last_sign_in_at)} ago from #{current_person.last_sign_in_ip}" %>
+
   <%= link_to "SignOut", destroy_person_session_path %>
 <% else %>
   <%= link_to "SignIn", new_person_session_path %>

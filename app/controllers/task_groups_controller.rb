@@ -10,7 +10,8 @@ class TaskGroupsController < ApplicationController
   def show
       @task_group=TaskGroup.find(params[:id])
       @project = @task_group.project
-      @tasks= @task_group.tasks.all
+      @tasks= @task_group.tasks
+      @people= Person.all
   end
 
   def create
@@ -18,7 +19,7 @@ class TaskGroupsController < ApplicationController
     @task_group = @project.task_groups.new(params[:task_group])
     @task_group.save
     if @task_group.save
-       redirect_to project_task_groups_path, :notice =>'New TaskGroup added'
+       redirect_to project_path(@project), :notice =>'New TaskGroup added'
      else
        render :action => "new", :alert => 'TaskGroup couldnot be added. Try again'
      end
@@ -27,5 +28,13 @@ class TaskGroupsController < ApplicationController
   def new
     @project = Project.find(params[:project_id])
     @task_group = @project.task_groups.new
+  end
+
+  def assignment
+    @task_group_id =
+    @task_id =
+    @person_id =
+    Connection.create(:task_id => @task_id, :person_id => @person_id)
+
   end
 end

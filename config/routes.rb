@@ -38,10 +38,16 @@ PMS::Application.routes.draw do
   end
 
   resources:people
+  get "task_groups/assignment"
+  post "task_groups/assignment"
 
   root :to => "projects#index"
 
-
+  #   resources :products do
+  #     member do
+  #       get 'short'
+  #       post 'toggle'
+  #     end
 
 
   # The priority is based upon order of creation:

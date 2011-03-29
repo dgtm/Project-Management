@@ -1,7 +1,7 @@
 class Project < ActiveRecord::Base
-  validates :title,
-            :status,
-            :presence => true
+  validates :title, :presence => true
+  validates :status, :presence => true
+
   has_many :task_groups, :dependent => :destroy
 
 end

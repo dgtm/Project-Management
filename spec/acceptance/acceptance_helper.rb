@@ -1,1 +1,3 @@
-require 'models/spec_helper.rb'
+require 'rspec'
+require 'capybara/rspec'
+require 'spec_helper'

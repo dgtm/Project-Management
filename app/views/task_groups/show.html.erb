@@ -1,13 +1,12 @@
-<h1>TaskGroup</h1>
-<%= @project.title %> <br />
+<h1> <%= @project.title %> </h1><br />
 
-<h3>
-<%= @task_group.name %> <br />
+<h3>TaskGroup: <%= @task_group.name %> <br /> </h3>
 
 <h4>Task List </h4>
 <ul>
 <% @tasks.each do |task| %>
-  <li><%= task.name %>
+  <li><%= link_to task.name, task_group_task_path(@task_group,task) %>
+  <%= render :partial => "member_select" %>
   <%= task.duration %>
   <%= task.status %>
   <%= task.created_at %> </li>

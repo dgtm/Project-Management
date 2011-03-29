@@ -1,4 +1,4 @@
-<h2>TaskGroups List</h2> <%= link_to "Create New TaskGroup", new_project_task_group_path(@project) %>
+<%= link_to "Create New TaskGroup", new_project_task_group_path(@project) %>
 <div id="task_groups_list">
 <ul>
   <% @task_groups.each do |taskgroup| %>

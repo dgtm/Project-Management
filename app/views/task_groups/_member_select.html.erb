@@ -1,0 +1,8 @@
+<% form_tag ({:controller => "task_groups", :action => "assignment"}) do %>
+<%= select_tag "people", options_from_collection_for_select(@people, "id", "name") %>
+<%= submit_tag "Assign" %>
+<% end %>
+
+
+
+

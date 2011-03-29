@@ -1,2 +1,6 @@
-<h1>Tasks#show</h1>
-<p>Find me in app/views/tasks/show.html.erb</p>
+<h1><%= @task_group.name %></h1>
+<h2>Task:</h2>
+
+<%= @task.name  %>
+
+<%= render :partial => "task_groups/member_select" %>
