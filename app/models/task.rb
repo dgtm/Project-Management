@@ -1,5 +1,9 @@
 class Task < ActiveRecord::Base
-  belongs_to :TaskGroup
+  belongs_to :task_group
+
+  def set_name
+    self.name
+  end
 end
 
 # == Schema Information

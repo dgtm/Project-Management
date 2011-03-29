@@ -1,6 +1,6 @@
 class TaskGroup < ActiveRecord::Base
-  belongs_to :Project
-  has_many :Tasks, :dependent => :destroy
+  belongs_to :project
+  has_many :tasks, :dependent => :destroy
 end
 
 # == Schema Information

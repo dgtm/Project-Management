@@ -2,7 +2,8 @@ class Project < ActiveRecord::Base
   validates :title,
             :status,
             :presence => true
-  has_many :TaskGroups, :dependent => :destroy
+  has_many :task_groups, :dependent => :destroy
+
 end
 
 # == Schema Information

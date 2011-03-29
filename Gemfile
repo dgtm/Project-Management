@@ -12,6 +12,7 @@ gem 'sqlite3'
 
 gem 'annotate'
 gem 'formtastic'
+gem 'devise'
 
 # Deploy with Capistrano
 # gem 'capistrano'
@@ -32,3 +33,13 @@ gem 'formtastic'
 # group :development, :test do
 #   gem 'webrat'
 # end
+
+group :development, :test do
+  gem 'rspec-rails'
+  gem 'shoulda-matchers'
+  gem 'database_cleaner'
+  gem 'launchy'
+  gem 'capybara', :git => 'https://github.com/jnicklas/capybara.git'
+  gem 'machinist', :git => 'https://github.com/notahat/machinist.git'
+end
+

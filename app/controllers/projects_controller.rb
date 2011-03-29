@@ -36,7 +36,7 @@ class ProjectsController < ApplicationController
 
   def show
     @project = Project.find(params[:id])
-    @task_groups= @project.TaskGroups.all
+    @task_groups= @project.task_groups
   end
 
   def edit

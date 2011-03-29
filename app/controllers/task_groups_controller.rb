@@ -1,12 +1,20 @@
 class TaskGroupsController < ApplicationController
   def index
+    # @tg=TaskGroup.find(paramas[:id])
+    # @project = @tg.project
+     # @task_groups = @project.TaskGroups.all
     @project = Project.find(params[:project_id])
-    @task_groups = @project.TaskGroups.all
+    @task_groups = @project.task_groups.all
+  end
+
+  def show
+      @task_group=TaskGroup.find(params[:id])
+      @project = @task_group.project
   end
 
   def create
     @project=Project.find(params[:project_id])
-    @task_group = @project.TaskGroups.new(params[:task_group])
+    @task_group = @project.task_groups.new(params[:task_group])
     @task_group.save
     if @task_group.save
        redirect_to project_task_groups_path, :notice =>'New TaskGroup added'
@@ -17,33 +25,6 @@ class TaskGroupsController < ApplicationController
 
   def new
     @project = Project.find(params[:project_id])
-    @task_group = @project.TaskGroups.new
+    @task_group = @project.task_groups.new
   end
-  #
-  #   def destroy
-  #     @project = Project.find(params[:id])
-  #     if @project.destroy
-  #        redirect_to projects_path, :notice => "Project Deleted Successfully"
-  #     else
-  #        redirect_to projects_path, :alert => "Project Deletion Failed!!"
-  #     end
-  #   end
-  #
-  #   def update
-  #     @project = Project.find(params[:id])
-  #     if @project.update_attributes(params[:project])
-  #       redirect_to(projects_path, :notice => "Project Updated Successfully")
-  #     else
-  #       render :action => "edit", :alert => "Project Update Failure!!"
-  #     end
-  #   end
-  #
-  def show
-    @project = Project.find(params[:project_id])
-    @task_group = @project.TaskGroups.find(params[:id])
-  end
-  #
-  #   def edit
-  #     @project = Project.find(params[:id])
-  #   end
 end

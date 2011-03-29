@@ -1,4 +1,8 @@
 <h1>TaskGroup</h1>
+<%= @project %> <br />
+
 <h3>
-<%= @task_group.name %> <br />
+<%= @task_group %> <br />
+<%= link_to "Create Tasks", new_task_group_task_path(@task_group)%>
+
 </h3>
