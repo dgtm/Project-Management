@@ -14,6 +14,7 @@ gem 'annotate'
 gem 'formtastic'
 gem 'devise'
 
+gem 'jquery-rails'
 # Deploy with Capistrano
 # gem 'capistrano'
 

@@ -1,10 +1,27 @@
+module Formtastic
+  module DatePicker
+    protected
+
+    def datepicker_input(method, options = {})
+      format = options[:format] || ActiveSupport::CoreExtensions::Date::Conversions::DATE_FORMATS[:default] || '%d %b %Y'
+      string_input(method, datepicker_options(format, object.send(method)).merge(options))
+    end
+
+    # Generate html input options for the datepicker_input
+    #
+    def datepicker_options(format, value = nil)
+      datepicker_options = {:value => value.try(:strftime, format), :input_html => {:class => 'ui-datepicker'}}
+    end
+  end
+end
+Formtastic::SemanticFormBuilder.send(:include, Formtastic::DatePicker)
 # encoding: utf-8
 
 # --------------------------------------------------------------------------------------------------
-# Please note: If you're subclassing Formtastic::SemanticFormBuilder in a Rails 3 project, 
-# Formtastic uses class_attribute for these configuration attributes instead of the deprecated 
-# class_inheritable_attribute. The behaviour is slightly different with subclasses (especially 
-# around attributes with Hash or Array) values, so make sure you understand what's happening. 
+# Please note: If you're subclassing Formtastic::SemanticFormBuilder in a Rails 3 project,
+# Formtastic uses class_attribute for these configuration attributes instead of the deprecated
+# class_inheritable_attribute. The behaviour is slightly different with subclasses (especially
+# around attributes with Hash or Array) values, so make sure you understand what's happening.
 # See the documentation for class_attribute in ActiveSupport for more information.
 # --------------------------------------------------------------------------------------------------
 
@@ -78,3 +95,4 @@
 # You can add custom inputs or override parts of Formtastic by subclassing SemanticFormBuilder and
 # specifying that class here.  Defaults to SemanticFormBuilder.
 # Formtastic::SemanticFormHelper.builder = MyCustomBuilder
+
