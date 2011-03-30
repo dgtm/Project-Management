@@ -9,7 +9,7 @@ gem 'sqlite3'
 
 # Use unicorn as the web server
 # gem 'unicorn'
-
+gem 'jquery-rails'
 gem 'annotate'
 gem 'formtastic'
 gem 'devise'
@@ -37,10 +37,15 @@ gem 'jquery-rails'
 
 group :development, :test do
   gem 'rspec-rails'
+end
+
+group :test do
   gem 'shoulda-matchers'
   gem 'database_cleaner'
   gem 'launchy'
   gem 'capybara', :git => 'https://github.com/jnicklas/capybara.git'
-  gem 'machinist', :git => 'https://github.com/notahat/machinist.git'
+  gem 'machinist', '>= 2.0.0.beta1'
+  gem 'ffaker'
+  gem 'cucumber-rails'
 end
 

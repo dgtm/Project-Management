@@ -19,6 +19,8 @@ class TasksController < ApplicationController
   end
 
   def edit
+    @task_group = TaskGroup.find(params[:task_group_id])
+
   end
 
   def show
