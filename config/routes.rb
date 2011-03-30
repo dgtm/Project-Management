@@ -1,34 +1,6 @@
 PMS::Application.routes.draw do
   devise_for :people
 
-  # get "tasks/index"
-  #
-  # get "tasks/create"
-  #
-  # get "tasks/new"
-  #
-  # get "tasks/edit"
-  #
-  # get "tasks/show"
-  #
-  # get "tasks/destroy"
-  #
-  # get "tasks/update"
-
-  # get "projects/index"
-  #
-  #   get "projects/create"
-  #
-  #   get "projects/new"
-  #
-  #   get "projects/destroy"
-  #
-  #   get "projects/update"
-  #
-  #   get "projects/show"
-  #
-  #   get "projects/edit"
-
   resources :projects do
     resources :task_groups
   end

@@ -10,6 +10,7 @@
   <%= task.duration %>
   <%= task.status %>
   <%= task.created_at %> </li>
+  <%= link_to "Edit", edit_task_group_task_path(@task_group,task) %>
 <% end %>
 </ul>
 <%= link_to "Create Tasks", new_task_group_task_path(@task_group)%>
