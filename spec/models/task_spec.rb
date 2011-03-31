@@ -16,5 +16,4 @@ describe Task do
       task.task_group_id.should == 1
     end
   end
-
 end

@@ -1,0 +1,4 @@
+h1. Project Management App
+--------------------------------------------------------------
+h2. A Simple Project Management Application in rails Framework.
+

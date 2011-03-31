@@ -6,3 +6,4 @@ Given /^I am authenticated$/ do
   click_button "Sign in"
 end
 
+

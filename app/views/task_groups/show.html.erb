@@ -1,9 +1,10 @@
 <h1> <%= @project.title %> </h1><br />
 
-<h3>TaskGroup: <%= @task_group.name %> <br /> </h3>
+<h3>TaskGroup: <%= @task_group.name %></h3>
+<h3>Duration: <%= @task_group.duration %></h3>
 
-<h4>Task List </h4>
-<ul>
+<h4>Task Lists</h4>
+<h3><ul>
 <% @tasks.each do |task| %>
   <li><%= link_to task.name, task_group_task_path(@task_group,task) %>
   <%= render :partial => "member_select" %>
@@ -13,6 +14,6 @@
   <%= link_to "Edit", edit_task_group_task_path(@task_group,task) %>
 <% end %>
 </ul>
+</h3>
 <%= link_to "Create Tasks", new_task_group_task_path(@task_group)%>
 
-</h3>

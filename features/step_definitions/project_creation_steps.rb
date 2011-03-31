@@ -18,3 +18,11 @@ Given /^I pressed "([^"]*)"$/ do |arg1|
   click_button "Create Project"
 end
 
+Given /^I create a new project called "([^"]*)" with deadline "([^"]*)"$/ do |project_name,deadline|
+  fill_in("Title", :with => project_name)
+  fill_in("Status", :with => "Startup")
+  fill_in("Deadline", :with => deadline)
+  click_button("Create Project")
+end
+
+

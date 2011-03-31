@@ -1,13 +1,13 @@
 <div id="project_show">
-<h1>Project</h1>
+<h1>Project: <%= @project.title %> </h1>
 <h3>
-<%= @project.title %> <br />
-<%= @project.description %> <br />
-<%= @project.created_at %> <br />
-<%= @project.deadline %> <br />
+Description: <%= @project.description %> <br />
+Created At: <%= @project.created_at %> <br />
+Deadline: <%= @project.deadline %> <br />
 </h3>
 
 
 <h2>Available Task Groups</h2>
 <%= render "/task_groups/task_groups" %>
 </div>
+

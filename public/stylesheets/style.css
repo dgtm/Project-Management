@@ -2,5 +2,16 @@ body {
     margin: 20px;
     padding: 5px;
     border: 1px solid #D5E5F0;
+    box-shadow: 5px 10px 5px rgba(0,0,0,.4);
+}
+
+a {
+    text-decoration: none;
+    color: #0C50A8;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #6B0522;
 }
 
