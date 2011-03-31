@@ -9,9 +9,11 @@ PMS::Application.routes.draw do
     resources :tasks
   end
 
+  resources :tasks do
+    post 'assignment'
+  end
+
   resources:people
-  get "task_groups/assignment"
-  post "task_groups/assignment"
 
   root :to => "projects#index"
 
@@ -71,7 +73,6 @@ PMS::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => "welcome#index"
 
   # See how all your routes lay out with "rake routes"
 

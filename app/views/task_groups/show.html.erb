@@ -7,11 +7,10 @@
 <h3><ul>
 <% @tasks.each do |task| %>
   <li><%= link_to task.name, task_group_task_path(@task_group,task) %>
-  <%= render :partial => "member_select" %>
+  <%# render :partial => "member_select" %>
   <%= task.duration %>
   <%= task.status %>
   <%= task.created_at %> </li>
-  <%= link_to "Edit", edit_task_group_task_path(@task_group,task) %>
 <% end %>
 </ul>
 </h3>

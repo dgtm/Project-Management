@@ -1,8 +1,5 @@
 class TaskGroupsController < ApplicationController
   def index
-    # @tg=TaskGroup.find(paramas[:id])
-    # @project = @tg.project
-     # @task_groups = @project.TaskGroups.all
     @project = Project.find(params[:project_id])
     @task_groups = @project.task_groups.all
   end
@@ -28,13 +25,5 @@ class TaskGroupsController < ApplicationController
   def new
     @project = Project.find(params[:project_id])
     @task_group = @project.task_groups.new
-  end
-
-  def assignment
-    @task_group_id =
-    @task_id =
-    @person_id =
-    Connection.create(:task_id => @task_id, :person_id => @person_id)
-
   end
 end
