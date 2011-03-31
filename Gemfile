@@ -35,6 +35,8 @@ gem 'jquery-rails'
 #   gem 'webrat'
 # end
 
+gem 'nifty-generators'
+
 group :development, :test do
   gem 'rspec-rails'
   gem 'ffaker'

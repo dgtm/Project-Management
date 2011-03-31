@@ -1,4 +1,13 @@
-h1. Project Management App
---------------------------------------------------------------
-h2. A Simple Project Management Application in rails Framework.
+h1=. Project Management App
+
+h2. An attempt to make a simple Project Management System in Rails Framework
+
+h3. Features of the app are
+
+* User authentication using devise gem
+* Project sub categorized to Task Groups and Tasks
+* User are assigned to task & Task status can be set
+* Only authorized user is able to assign task
+
+Suggestions are warmly welcomed :)
 

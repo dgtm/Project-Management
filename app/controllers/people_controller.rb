@@ -5,6 +5,7 @@ class PeopleController < ApplicationController
 
   def create
     if @person = Person.create(params[:id])
+      UserMailor.welcome_email(@person).deliver
       redirect_to new_person_path, :notice => "New Person added"
     end
   end
@@ -13,3 +14,4 @@ class PeopleController < ApplicationController
     @people = Person.all
   end
 end
+
