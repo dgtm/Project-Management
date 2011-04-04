@@ -28,9 +28,7 @@ class TasksController < ApplicationController
     @people = Person.all
     @task = Task.find(params[:id])
     @task_group= @task.task_group
-  end
-
-  def destroy
+    @connections = Connection.where(:task_id => @task.id).to_a
   end
 
   def update
@@ -44,10 +42,17 @@ class TasksController < ApplicationController
 
   def assignment
     @task = Task.find(params[:task_id])
+    @task_group = @task.task_group
     @person = Person.find(params[:people])
-    Connection.create(:task_id => @task.id, :person_id => @person.id)
-    msg=@task.name + " " + @person.name
-    redirect_to projects_path, :notice => msg
+    Connection.find_or_create_by_task_id_and_person_id(:task_id => @task.id, :person_id => @person.id)     
+    redirect_to task_group_task_path(@task_group, @task), :notice => @task.name + " with id " + @task.id.to_s + " is now assigned to " + @person.name
   end
 
+   def release
+    #@task = Task.find(params[:id])
+    #@person = Person.find(params[:person_id])   
+    #Connection.delete_all(:task_id => task.id, :person_id => person.id)
+    #flash[:alert]= "#{person.name} has been released form Task: #{task.name}" 
+    #redirect_to person_path(@person)
+  end 
 end

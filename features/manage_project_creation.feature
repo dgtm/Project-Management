@@ -1,7 +1,6 @@
 @javascript
 Feature: Add a new Project
-  In order to get a new projects
-  As a new Project
+  In order to get a new project
   I want to be able to create project
 
   Scenario: Register a new Project

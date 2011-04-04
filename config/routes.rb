@@ -13,7 +13,13 @@ PMS::Application.routes.draw do
     post 'assignment'
   end
 
-  resources:people
+  resources :connections
+
+  resources :people do
+    resources :tasks do
+      post 'release'
+    end
+  end
 
   root :to => "projects#index"
 

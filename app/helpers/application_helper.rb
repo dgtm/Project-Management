@@ -1,2 +1,10 @@
 module ApplicationHelper
+	def id2task(id)
+		@task = Task.find(:all, :conditions => ['id = ?', id])
+	end
+
+	def rls(task, person)
+		#Connection.delete_all(:task_id => task.id, :person_id => person.id)
+		#flash[:alert]= "#{person.name} has been released form Task: #{task.name}"
+	end
 end

@@ -1,5 +1,10 @@
 <% semantic_form_for ([@task_group, @task]) do |form| %>
-  <%= form.inputs %>
-  <%= form.buttons %>
+  <% form.inputs do %>
+     <%= form.input :name %>
+     <%= form.input :duration %>
+     <%= form.input :status, :as => :select,  :collection => TaskCategory.select('distinct name').map { |c| c.name } %>
+     <% end %>
+     <% form.buttons do %>
+     <%= form.commit_button %>
+     <% end %>
 <% end %>
-
