@@ -7,12 +7,12 @@
 #   Mayor.create(:name => 'Daley', :city => cities.first)
 
 
- 
+
     [
-    {:title => "BlogApp", :description => "Simple Blog App in Rails", :status => "Pending"},
-    {:title => "Student Management", :description => "Manage Students in School", :status => "Pending"},
-    {:title => "Hotel Management", :description => "Manage Students in School", :status => "Pending"},
-    {:title => "Hospital Management", :description => "Manage Students in School", :status => "Pending"}
+    {:title => "BlogApp", :description => "Simple Blog App in Rails", :status => "Pending", :deadline => "2012-2-2"},
+    {:title => "Student Management", :description => "Manage Students in School", :status => "Pending", :deadline => "2012-2-2"},
+    {:title => "Hotel Management", :description => "Manage Students in School", :status => "Pending", :deadline => "2012-2-2"},
+    {:title => "Hospital Management", :description => "Manage Students in School", :status => "Pending", :deadline => "2012-2-2"}
     ].each do |attrs|
       project= Project.find_or_create_by_title(attrs)
     end
@@ -29,7 +29,7 @@
     [
     {:name => "Pending" },
     {:name => "Ongoing" },
-    {:name => "Finished" }    
+    {:name => "Finished" }
     ].each do |attrb|
       person= TaskCategory.find_or_create_by_name(attrb)
     end
