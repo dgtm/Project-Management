@@ -5,7 +5,7 @@
   <% @projects.each do |proj| %>
     <li>
     Title: <%= link_to "#{proj.title}", project_path(proj) %>
-    Created At: <%= proj.created_at %>
+    Created At: <%= proj.created_at.to_s(:project_date) %>
     Deadline: <%= proj.deadline %>
     <%= link_to "Edit", edit_project_path(proj) %>
     <%= link_to "Delete", project_path(proj), :confirm => "Are you sure you want to delete?", :method => :delete %>

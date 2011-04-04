@@ -40,6 +40,7 @@ gem 'nifty-generators'
 group :development, :test do
   gem 'rspec-rails'
   gem 'ffaker'
+  gem 'irbtools'
 end
 
 group :test do

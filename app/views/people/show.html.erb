@@ -1,0 +1,8 @@
+<%= "#{@person.name} is assigned to following Tasks:" %> <br />
+<% @connections.each do |conn| %>
+	<% @tasks = id2task(conn.task_id) %>
+	<% @tasks.each do |task| %>
+		<%= link_to "#{task.name}", task_path(task.id) %>
+		<%= link_to "Release" %> <br />
+	<% end %>
+<% end %>

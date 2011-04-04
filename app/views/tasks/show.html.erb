@@ -1,7 +1,18 @@
 <h1><%= @task_group.name %></h1>
 <h2>Task:</h2>
 
-<%= @task.name  %>
+Name: <%= @task.name  %> <br />
+Duration: <%= @task.duration %> <br />
+Status: <%= @task.status %> <br />
+Created At: <%= @task.created_at.to_s(:project_date) %>
+<br />
+Connected People:
+<% @p = connected_people(@connections) %>
+<% @p.each do |p| %>
+<br />
+<%= link_to "#{p[0].name}", person_path(p[0]) %> 
+<%= link_to "Release" %>
+<% end %> 
 
 <%= render :partial => "task_groups/member_select" %>
 

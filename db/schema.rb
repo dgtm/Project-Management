@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110330034922) do
+ActiveRecord::Schema.define(:version => 20110402143816) do
 
   create_table "connections", :force => true do |t|
     t.integer  "person_id"
@@ -44,6 +44,12 @@ ActiveRecord::Schema.define(:version => 20110330034922) do
     t.date     "deadline"
     t.string   "status"
     t.integer  "budget"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "task_categories", :force => true do |t|
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

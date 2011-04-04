@@ -3,6 +3,7 @@ class Project < ActiveRecord::Base
   validates :status, :presence => true
 
   has_many :task_groups, :dependent => :destroy
+  attr_accessible :title, :status, :description, :deadline, :budget
 
 end
 
@@ -19,4 +20,3 @@ end
 #  created_at  :datetime
 #  updated_at  :datetime
 #
-
