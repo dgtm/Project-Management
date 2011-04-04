@@ -17,7 +17,7 @@ PMS::Application.routes.draw do
 
   resources :people do
     resources :tasks do
-      post 'release'
+      get 'release'
     end
   end
 

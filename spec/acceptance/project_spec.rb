@@ -7,7 +7,7 @@ feature "Title" do
     fill_in("Email", :with => "test@email.com")
     fill_in("Password", :with => "test123")
     click_button "Sign in"
-    @project = Project.create!(:title => 'Project X', :status => "Pending")
+    @project = Project.create!(:title => 'Project X', :status => "Pending", :deadline => "2011-2-2")
     visit projects_path(@project)
     page.should have_content("Project X")
   end

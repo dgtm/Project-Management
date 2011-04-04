@@ -11,8 +11,12 @@
 <%= link_to "Project Management System", projects_path %> </h1>
 <%= render :partial => "shared/link" %>
 <hr />
-<%= notice %>
-<%= alert %>
+<div id="notice">
+  <%= notice %>
+</div>
+<div id="alert">
+  <%= alert %>
+</div>
 <div id="yield">
   <%= yield %>
 </div>

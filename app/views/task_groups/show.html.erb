@@ -1,17 +1,16 @@
-<h1> <%= @project.title %> </h1><br />
-
+<h1> <%= @project.title %> </h1>
 <h3>TaskGroup: <%= @task_group.name %></h3>
-<h3>Duration: <%= @task_group.duration %></h3>
 
-<h4>Task Lists</h4>
-<h3><ul>
+<div class="create_task">
+  <%= link_to "Create Tasks", new_task_group_task_path(@task_group)%>
+</div>
+<ul class="tasks_list">
 <% @tasks.each do |task| %>
-  <li><%= link_to task.name, task_group_task_path(@task_group,task) %>
-  <%= task.duration %>
-  <%= task.status %>
-  <%= task.created_at.to_s(:project_date) %> </li>
+    <li class= "task_list">
+      <h3><%= link_to task.name, task_group_task_path(@task_group,task) %></h3>
+      Duration: <%= task.duration %> days |
+      Status: <%= task.status %>
+    </li>
 <% end %>
 </ul>
-</h3>
-<%= link_to "Create Tasks", new_task_group_task_path(@task_group)%>
 

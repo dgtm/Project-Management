@@ -1,15 +1,17 @@
 <h2>Projects List</h2> <%= link_to "Create New Project", new_project_path %>
-
 <div id="projects_list">
 <ul>
   <% @projects.each do |proj| %>
-    <li>
-    Title: <%= link_to "#{proj.title}", project_path(proj) %>
-    Created At: <%= proj.created_at.to_s(:project_date) %>
-    Deadline: <%= proj.deadline %>
+    <li class="project_list">
+    <% @val= project_status(proj) %>
+    <h3><%= link_to "#{proj.title}", project_path(proj) %></h3>
+    Status: <%= "#{@val.round(2)}% complete" %> |
+    Created at: <%= proj.created_at.to_s(:project_date) %> |
+    Deadline: <%= proj.deadline %> |
+    <%= date_diff_in_days(proj.deadline) %> <br />
     <%= link_to "Edit", edit_project_path(proj) %>
     <%= link_to "Delete", project_path(proj), :confirm => "Are you sure you want to delete?", :method => :delete %>
-    </li>
+    </li> <br />
   <% end %>
 </ul>
 </div>

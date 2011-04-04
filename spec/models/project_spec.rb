@@ -3,7 +3,6 @@ require 'spec_helper'
 describe Project do
   it { should have_many :task_groups }
   it { should validate_presence_of :title }
-  it { should validate_presence_of :status }
 
   context "title should not be blank" do
     it "should have title set" do

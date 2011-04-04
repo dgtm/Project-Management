@@ -15,3 +15,29 @@ a:hover {
     color: #6B0522;
 }
 
+#notice {
+    background: #00ff00;
+}
+
+#alert {
+    background: #ff0000;
+}
+
+.project_list {
+    border: 1px solid #DDDDDD;
+    box-shadow: 5px 10px 5px rgba(0,0,0,.2);
+    padding: 12px;
+    list-style: none;
+}
+
+.task_list {
+    border: 1px solid #DDDDDD;
+    box-shadow: 5px 10px 5px rgba(0,0,0,.2);
+    padding: 12px;
+    list-style: none;
+}
+
+.create_task {
+    float: right;
+    padding-right: 15px;
+}

@@ -1,19 +1,19 @@
 <h1><%= @task_group.name %></h1>
-<h2>Task:</h2>
+<h2>Task: <%= @task.name  %>
 
-Name: <%= @task.name  %> <br />
-Duration: <%= @task.duration %> <br />
+<div class="task_edit">
+  <%= link_to "Edit", edit_task_path(@task) %></h2>
+</div>
+Duration: <%= @task.duration %> days <br />
 Status: <%= @task.status %> <br />
 Created At: <%= @task.created_at.to_s(:project_date) %>
 <br />
-Connected People:
-<% @p = connected_people(@connections) %>
-<% @p.each do |p| %>
-<br />
-<%= link_to "#{p[0].name}", person_path(p[0]) %> 
-<%= link_to "Release" %>
-<% end %> 
+<h3> Team Members: <%= render :partial => "task_groups/member_select" %> </h3>
+<% @connected_people = connected_people(@connections) %>
+<% @connected_people.each do |person| %>
+  <%= link_to "#{person.name}", person_path(person) %> |
+  <%= link_to "Release", person_task_release_path(person,@task) %>
+  <br />
+<% end %>
 
-<%= render :partial => "task_groups/member_select" %>
 
-<%= link_to "Edit", edit_task_path(@task) %>

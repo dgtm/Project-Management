@@ -4,7 +4,7 @@
   <% @task_groups.each do |taskgroup| %>
     <li>
     <%= link_to "#{taskgroup.name}", task_group_path(taskgroup) %>
-    <%= taskgroup.duration %>
+    Duration: <%= taskgroup.duration %> Days
     </li>
   <% end %>
 </ul>
